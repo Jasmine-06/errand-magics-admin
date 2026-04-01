@@ -14,10 +14,12 @@ export default defineConfig({
   },
   root: path.resolve(import.meta.dirname, "client"),
   build: {
-    outDir: "dist",
+    outDir: path.resolve(import.meta.dirname, "dist"),
+    emptyOutDir: true,
     assetsDir: "assets",
     sourcemap: false,
     minify: "esbuild", // Changed from 'terser' to 'esbuild'
+    chunkSizeWarningLimit: 1000,
   },
   envDir: import.meta.dirname,
   base: "/",
