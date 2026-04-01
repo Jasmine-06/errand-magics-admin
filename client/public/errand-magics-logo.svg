@@ -1,0 +1,22 @@
+<svg width="200" height="100" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Shopping Bag -->
+  <path d="M50 35C50 25 58 20 65 20H85C92 20 100 25 100 35L100 75C100 82 95 85 85 85H65C55 85 50 82 50 75V35Z" fill="#0B2340" stroke="#0B2340" stroke-width="1.5"/>
+  
+  <!-- Bag Handle -->
+  <path d="M65 20C65 15 70 10 75 10C80 10 85 15 85 20" stroke="#0B2340" stroke-width="2" fill="none" stroke-linecap="round"/>
+  
+  <!-- Star 1 -->
+  <path d="M110 25L113 33L121 33L114 38L117 46L110 41L103 46L106 38L99 33L107 33L110 25Z" fill="#FB8500"/>
+  
+  <!-- Star 2 -->
+  <path d="M130 50L131 54L135 54L131 57L132 61L128 58L124 61L125 57L121 54L125 54L126 50Z" fill="#FB8500"/>
+  
+  <!-- Star 3 -->
+  <path d="M115 70L116 74L120 74L116 77L117 81L113 78L109 81L110 77L106 74L110 74L111 70Z" fill="#FB8500"/>
+  
+  <!-- Swoosh -->
+  <path d="M20 50Q40 30 60 40" stroke="#FB8500" stroke-width="3" fill="none" stroke-linecap="round"/>
+  
+  <!-- Text: ERRAND MAGICS -->
+  <text x="10" y="95" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0B2340">ERRAND MAGICS</text>
+</svg>
