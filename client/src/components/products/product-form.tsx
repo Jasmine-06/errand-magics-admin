@@ -484,7 +484,7 @@ const handleSubmit = async (e: React.FormEvent) => {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="price">Original Price (₹) *</Label>
+              <Label htmlFor="price">Original Price ($) *</Label>
               <Input
                 id="price"
                 type="number"
@@ -548,7 +548,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="discountedPrice">Discounted Price (₹) *</Label>
+                  <Label htmlFor="discountedPrice">Discounted Price ($) *</Label>
                   <Input
                     id="discountedPrice"
                     type="number"
@@ -571,16 +571,16 @@ const handleSubmit = async (e: React.FormEvent) => {
               <div className="p-3 border rounded-md">
                 <div className="flex items-center justify-between text-sm">
                   <span>Original Price:</span>
-                  <span className="line-through text-muted-foreground">₹{formData.price}</span>
+                  <span className="line-through text-muted-foreground">${formData.price}</span>
                 </div>
                 <div className="flex items-center justify-between text-sm font-medium">
                   <span>Discounted Price:</span>
-                  <span className="text-green-600">₹{formData.discountedPrice}</span>
+                  <span className="text-green-600">${formData.discountedPrice}</span>
                 </div>
                 <div className="flex items-center justify-between text-sm">
                   <span>You Save:</span>
                   <span className="text-green-600 font-medium">
-                    ₹{(parseFloat(formData.price) - parseFloat(formData.discountedPrice)).toFixed(2)} 
+                    ${(parseFloat(formData.price) - parseFloat(formData.discountedPrice)).toFixed(2)} 
                     ({formData.discountPercentage}% OFF)
                   </span>
                 </div>

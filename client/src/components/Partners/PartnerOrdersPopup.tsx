@@ -33,7 +33,7 @@ export function PartnerOrdersPopup({ partner, orders, onClose }: any) {
                             </p>
 
                             <p className="text-sm">
-                                Amount: ₹{order.total}
+                                Amount: $${order.total}
                             </p>
 
                             <p className="text-xs text-gray-500 mt-1">

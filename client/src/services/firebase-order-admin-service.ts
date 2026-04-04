@@ -368,7 +368,7 @@ export class AdminFirebaseOrderService {
           ? "Payment Verified! ✅"
           : "Payment Verification Failed ❌",
         message: isVerified
-          ? `Your payment for order #${orderData.orderNumber} has been verified successfully. Total: ₹${orderData.total}`
+          ? `Your payment for order #${orderData.orderNumber} has been verified successfully. Total: $${orderData.total}`
           : `Your payment for order #${orderData.orderNumber} could not be verified. ${rejectionReason
             ? `Reason: ${rejectionReason}`
             : "Please contact support for assistance."
@@ -755,7 +755,7 @@ export class AdminFirebaseOrderService {
       const notificationData = {
         type: "new_order",
         title: "🎉 New Order Received!",
-        message: `Order #${orderData.orderNumber} from ${orderData.customerName} - ₹${orderData.total}`,
+        message: `Order #${orderData.orderNumber} from ${orderData.customerName} - $${orderData.total}`,
         orderId: orderData.id || "",
         orderNumber: orderData.orderNumber,
         customerId: orderData.customerId,

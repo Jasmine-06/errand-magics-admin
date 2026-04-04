@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { ShoppingCart, IndianRupee, Package2, Clock, ArrowUp, ArrowDown } from "lucide-react"
+import { ShoppingCart, DollarSign, Package2, Clock, ArrowUp, ArrowDown } from "lucide-react"
 import type { DashboardMetrics } from "@/types"
 
 interface DashboardMetricsProps {
@@ -9,11 +9,11 @@ interface DashboardMetricsProps {
 
 export function DashboardMetricsGrid({ metrics, loading }: DashboardMetricsProps) {
   const formatCurrency = (amount: number) => {
-    return new Intl.NumberFormat("en-IN", {
+    return new Intl.NumberFormat("en-US", {
       style: "currency",
-      currency: "INR",
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
+      currency: "USD",
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
     }).format(amount)
   }
 
@@ -32,7 +32,7 @@ export function DashboardMetricsGrid({ metrics, loading }: DashboardMetricsProps
       value: formatCurrency(metrics.dailyRevenue),
       change: `+${metrics.revenueGrowth.toFixed(1)}%`,
       changeType: metrics.revenueGrowth >= 0 ? "positive" : "negative",
-      icon: IndianRupee,
+      icon: DollarSign,
       color: "from-green-500 to-green-600",
       description: "Compared to yesterday",
     },

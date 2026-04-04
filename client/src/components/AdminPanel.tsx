@@ -44,7 +44,6 @@ import {
   Edit,
   Trash2,
   Menu,
-  DollarSign,
   TrendingUp,
   Package2,
   CheckCircle,
@@ -73,7 +72,7 @@ import {
   ArrowUp,
   ArrowDown,
   Percent,
-  IndianRupee,
+  DollarSign,
   User,
   Store,
   Tag,
@@ -758,7 +757,7 @@ const AdminPanel: React.FC = () => {
           <div className="flex gap-4 text-sm">
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 bg-primary rounded-full"></div>
-              <span className="text-muted-foreground">Revenue (₹)</span>
+              <span className="text-muted-foreground">Revenue ($)</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 bg-accent rounded-full"></div>
@@ -775,10 +774,10 @@ const AdminPanel: React.FC = () => {
                 <div
                   className="bg-primary rounded-t-lg w-6 transition-all duration-500 hover:opacity-80 cursor-pointer relative group"
                   style={{ height: `${(data.revenue / maxRevenue) * 180}px` }}
-                  title={`Revenue: ₹${data.revenue.toLocaleString()}`}
+                  title={`Revenue: $${data.revenue.toLocaleString()}`}
                 >
                   <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-background border border-border rounded px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                    ₹{data.revenue.toLocaleString()}
+                    ${data.revenue.toLocaleString()}
                   </div>
                 </div>
 
@@ -801,7 +800,7 @@ const AdminPanel: React.FC = () => {
 
         <div className="mt-4 grid grid-cols-2 gap-4 text-center">
           <div className="p-3 bg-primary/10 rounded-lg">
-            <p className="text-lg font-bold text-primary">₹{chartData.reduce((sum, d) => sum + d.revenue, 0).toLocaleString()}</p>
+            <p className="text-lg font-bold text-primary">${chartData.reduce((sum, d) => sum + d.revenue, 0).toLocaleString()}</p>
             <p className="text-sm text-muted-foreground">Total Revenue</p>
           </div>
           <div className="p-3 bg-accent/10 rounded-lg">
@@ -815,11 +814,11 @@ const AdminPanel: React.FC = () => {
 
   // Utility functions
   const formatCurrency = (amount: number) => {
-    return new Intl.NumberFormat('en-IN', {
+    return new Intl.NumberFormat('en-US', {
       style: 'currency',
-      currency: 'INR',
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0
+      currency: 'USD',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
     }).format(amount);
   };
 
@@ -1067,7 +1066,7 @@ const AdminPanel: React.FC = () => {
             value: formatCurrency(dashboardMetrics.dailyRevenue),
             change: `+${dashboardMetrics.revenueGrowth.toFixed(1)}%`,
             changeType: dashboardMetrics.revenueGrowth >= 0 ? 'positive' : 'negative',
-            icon: IndianRupee,
+            icon: DollarSign,
             color: 'from-green-500 to-green-600',
             description: 'Compared to yesterday'
           },
@@ -1331,7 +1330,7 @@ const AdminPanel: React.FC = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="price">Price (₹) *</Label>
+                    <Label htmlFor="price">Price ($) *</Label>
                     <Input
                       id="price"
                       type="number"

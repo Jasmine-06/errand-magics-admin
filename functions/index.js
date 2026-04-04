@@ -39,7 +39,7 @@ exports.sendNewOrderNotification = functions.firestore
       const payload = {
         notification: {
           title: '🎉 New Order Received!',
-          body: `Order #${orderData.orderNumber} from ${orderData.customerName} - ₹${orderData.total}`,
+          body: `Order #${orderData.orderNumber} from ${orderData.customerName} - $${orderData.total}`,
           icon: '/logo.png',
           badge: '/logo.png',
           tag: orderId,
@@ -72,7 +72,7 @@ exports.sendNewOrderNotification = functions.firestore
       await db.collection('notifications').doc(orderId).set({
         type: 'new_order',
         title: '🎉 New Order Received!',
-        message: `Order #${orderData.orderNumber} from ${orderData.customerName} - ₹${orderData.total}`,
+        message: `Order #${orderData.orderNumber} from ${orderData.customerName} - $${orderData.total}`,
         orderId: orderId,
         orderNumber: orderData.orderNumber,
         customerId: orderData.customerId,

@@ -134,11 +134,11 @@ export function SalesChart({ orders = [], loading }: SalesChartProps) {
 
   // Format currency
   const formatCurrency = (amount: number) => {
-    return new Intl.NumberFormat("en-IN", {
+    return new Intl.NumberFormat("en-US", {
       style: "currency",
-      currency: "INR",
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
+      currency: "USD",
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
     }).format(amount);
   };
 
@@ -187,7 +187,7 @@ export function SalesChart({ orders = [], loading }: SalesChartProps) {
             <div className="flex gap-4 text-sm">
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 bg-primary rounded-full"></div>
-                <span className="text-muted-foreground">Revenue (₹)</span>
+                <span className="text-muted-foreground">Revenue ($)</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 bg-accent rounded-full"></div>

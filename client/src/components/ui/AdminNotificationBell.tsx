@@ -714,7 +714,7 @@ export function AdminNotificationBell({
                           {notification.type === "admin_order_placed" && (
                             <div className="flex items-center mt-2 space-x-2 flex-wrap">
                               <span className="text-xs bg-accent/10 text-accent px-2 py-0.5 rounded-full border border-accent/20">
-                                ₹{notification.total}
+                                ${notification.total}
                               </span>
                               <span className="text-xs text-muted-foreground">
                                 by {notification.customerName}

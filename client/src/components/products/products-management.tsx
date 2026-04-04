@@ -111,11 +111,11 @@ export function ProductsManagement({
   });
 
   const formatCurrency = (amount: number) => {
-    return new Intl.NumberFormat("en-IN", {
+    return new Intl.NumberFormat("en-US", {
       style: "currency",
-      currency: "INR",
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
+      currency: "USD",
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
     }).format(amount);
   };
 
@@ -187,7 +187,7 @@ export function ProductsManagement({
     },
     {
       key: "price",
-      title: "Price (₹)",
+      title: "Price ($)",
       exportable: true,
       render: (_, record) => {
         const hasDiscount =
@@ -479,8 +479,8 @@ export function ProductsManagement({
     const priceInfo = product.hasDiscount &&
       product.discountedPrice !== undefined &&
       product.discountedPrice !== null
-      ? `₹${product.discountedPrice} (${product.discountPercentage || 0}% OFF from ₹${product.price})`
-      : `₹${product.price}`;
+      ? `$${product.discountedPrice} (${product.discountPercentage || 0}% OFF from $${product.price})`
+      : `$${product.price}`;
 
     return {
       ...product,
